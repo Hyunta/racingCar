@@ -9,7 +9,7 @@ public class StringAddCalculator {
         if (text == null || text.isBlank()) {
             return 0;
         }
-        StringTokenizer st = new StringTokenizer(text, ",");
+        StringTokenizer st = new StringTokenizer(text, ",|:");
         while (st.hasMoreTokens()) {
             result += Integer.parseInt(st.nextToken());
         }
