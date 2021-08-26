@@ -1,6 +1,5 @@
 package calculator;
 
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class StringAddCalculator {
@@ -17,10 +16,22 @@ public class StringAddCalculator {
             text = split[1];
         }
         StringTokenizer st = new StringTokenizer(text, delim);
+        result = getResult(result, st);
+        return result;
+    }
+
+    private static int getResult(int result, StringTokenizer st) {
         while (st.hasMoreTokens()) {
-            result += Integer.parseInt(st.nextToken());
+            int num = Integer.parseInt(st.nextToken());
+            if (num < 0) {
+                throw new RuntimeException("음수 값 입력 금지");
+            }
+            result += num;
         }
         return result;
     }
 }
+
+
+
 

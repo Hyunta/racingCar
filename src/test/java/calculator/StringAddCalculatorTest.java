@@ -63,4 +63,10 @@ class StringAddCalculatorTest {
         result = StringAddCalculator.splitAndSum("//&\n1&2,3:4");
         assertThat(result).isEqualTo(10);
     }
+
+    @Test
+    void splitAndSum_negative() {
+        assertThatThrownBy(() -> StringAddCalculator.splitAndSum("-1,2,3"))
+                .isInstanceOf(RuntimeException.class);
+    }
 }
