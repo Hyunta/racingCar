@@ -3,6 +3,11 @@ package calculator;
 public class StringAddCalculator {
 
     public static int splitAndSum(String s) {
-        return 0;
+        int result = 0;
+        if (s == null || s == "") {
+            return 0;
+        }
+        return result;
     }
 }
+
