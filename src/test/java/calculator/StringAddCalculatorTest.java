@@ -50,6 +50,17 @@ class StringAddCalculatorTest {
 
         result = StringAddCalculator.splitAndSum("1:3");
         assertThat(result).isEqualTo(4);
+    }
 
+    @Test
+    void splitAndSum_구분자() {
+        int result = StringAddCalculator.splitAndSum("//;\n1;2;3");
+        assertThat(result).isEqualTo(6);
+
+        result = StringAddCalculator.splitAndSum("//-\n1-2-3");
+        assertThat(result).isEqualTo(6);
+
+        result = StringAddCalculator.splitAndSum("//&\n1&2,3:4");
+        assertThat(result).isEqualTo(10);
     }
 }

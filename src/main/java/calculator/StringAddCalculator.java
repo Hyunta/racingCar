@@ -1,5 +1,6 @@
 package calculator;
 
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class StringAddCalculator {
@@ -9,7 +10,13 @@ public class StringAddCalculator {
         if (text == null || text.isBlank()) {
             return 0;
         }
-        StringTokenizer st = new StringTokenizer(text, ",|:");
+        String delim = ",|:";
+        String[] split = text.split("\n");
+        if (split.length == 2) {
+            delim = delim + "|" + split[0].charAt(2);
+            text = split[1];
+        }
+        StringTokenizer st = new StringTokenizer(text, delim);
         while (st.hasMoreTokens()) {
             result += Integer.parseInt(st.nextToken());
         }
