@@ -29,4 +29,16 @@ class StringAddCalculatorTest {
         result = StringAddCalculator.splitAndSum("10");
         assertThat(result).isEqualTo(10);
     }
+
+    @Test
+    void splitAndSum_쉼표구분자() {
+        int result = StringAddCalculator.splitAndSum("1,2");
+        assertThat(result).isEqualTo(3);
+
+        result = StringAddCalculator.splitAndSum("1,2,3");
+        assertThat(result).isEqualTo(6);
+
+        result = StringAddCalculator.splitAndSum("1");
+        assertThat(result).isEqualTo(1);
+    }
 }
